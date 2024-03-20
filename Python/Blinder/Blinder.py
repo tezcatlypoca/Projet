@@ -7,14 +7,14 @@ class Blinder:
     characters = None
     specials = None
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.myfile = MyFile()
         self.characters = self.myfile.read_json("Bin\\alpha.json", "characters")
         self.specials = self.myfile.read_json("Bin\\alpha.json", "specials")
         
     # get table of paths
     # encrypt each of them
-    def obfuscate(self, file):
+    def obfuscate(self, file: str) -> list[bool]:
         encrypted_data = ''
         resultat = tuple()
         
@@ -34,7 +34,7 @@ class Blinder:
     
     # get table of paths
     # decrypt each of them
-    def clarify(self, file):
+    def clarify(self, file: str) -> list[bool]:
         decrypted_data = ''
         resultat = tuple()
         
